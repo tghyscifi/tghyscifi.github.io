@@ -103,10 +103,7 @@ theme: meow
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:tghyscifi/tghyscifi.github.io.git
-  branch: master
-  ignore_hidden: false
+  type:
 
 search:
   path: search.json
