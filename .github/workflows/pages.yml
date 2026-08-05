@@ -27,8 +27,10 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
+      - name: Build Hexo
+        run: |
+          npm install -g hexo-cli   # 关键：全局安装 hexo-cli
+          hexo generate             # 直接运行，不需要 npm run build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
