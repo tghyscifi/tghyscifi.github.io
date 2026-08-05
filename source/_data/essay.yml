@@ -1,0 +1,11 @@
+essay_info:
+  author:
+    瞳观幻域: assets/images/author.png
+essay_list:
+  - content: 测试动态：Hello, World!
+    date: 2026-08-05 20:04:34
+    from: 瞳观幻域
+    image: 
+      - assets/images/wallhaven-5yl597.webp
+      - assets/images/wallhaven-e7zogk.webp
+
