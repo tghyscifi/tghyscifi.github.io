@@ -356,15 +356,15 @@ comment:
       - 'https://registry.npmmirror.com/@waline/emojis/1.3.0/files/tw-emoji' 
     # https://waline.js.org/guide/features/emoji.html
     reaction: # https://waline.js.org/guide/features/reaction.html
-      - '❤️'
-      - '🤯'
-      - '💥'
-      - '🫡'
-      - '😂'
-      - '🤔'
-      - '🥺'
-      - '🚨'
-      - '🤡' 
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/2764-fe0f.png' # ❤️
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f92f.png'      # 🤯
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f4a5.png'      # 💥
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1fae1.png'      # 🫡
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f602.png'      # 😂
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f914.png'      # 🤔
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f97a.png'      # 🥺
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f6a8.png'      # 🚨
+      - 'https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/1f921.png'      # 🤡 
     option: # Custom other Waline options, https://waline.js.org/reference/client/props.html
       locale:
         placeholder: '欢迎评论～'
