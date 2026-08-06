@@ -80,7 +80,7 @@ Button 按钮
 - name: Meow 标签插件
   url: https://meow.jumaoo.top/posts/4c886562/
   desc: 主题模板官方文档
-  icon: https://meow.jumaoo.top/assets/images/favicon.ico
+  icon: https://meow.jumaoo.top/assets/images/Hexo-Theme-MEOW.ico
 {% endbutton %}
 
 <!--

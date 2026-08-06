@@ -17,9 +17,9 @@
     font-size: .9em
 
 img[data-lazy-src]
-  transition: all .3s ease-in
+  transition: opacity .3s ease-in
   &:not(.loaded)
-    filter: blur(0.8rem) brightness(1) !important
+    opacity: .85 !important
 
 img:not(.icon):not([no-view]):not(.noview)
   cursor: pointer

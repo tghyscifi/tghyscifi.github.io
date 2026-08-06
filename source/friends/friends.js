@@ -53,7 +53,7 @@ const friendsData = {
         {
           name: 'Meow',
           url: 'https://meow.jumaoo.top',
-          avatar: 'https://meow.jumaoo.top/images/Hexo-Meow-Logo.png',
+          avatar: 'https://meow.jumaoo.top/assets/images/Hexo-Theme-MEOW.ico',
           desc: '🐈简洁可爱的响应式Hexo主题'
         },
         {
