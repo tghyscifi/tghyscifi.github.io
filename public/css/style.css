@@ -1,35 +1,35 @@
 @import url("https://cdn.jsdelivr.net/npm/@chinese-fonts/syst@latest/dist/SourceHanSerifCN/result.css");
 @import url("/assets/fonts/SFMonoRegular/result.css");
 body[data-mode='light'] {
-  --theme-color: #ffb347;
-  --theme-color-light-1: #ffd191;
-  --theme-color-light-2: #ffc26c;
-  --theme-color-light-3: #ffca7e;
-  --theme-color-transparent-1: rgba(255,179,71,0.6);
-  --theme-color-dark-1: #ffa626;
+  --theme-color: #1a1a1a;
+  --theme-color-light-1: #6f7584;
+  --theme-color-light-2: #3a3f4d;
+  --theme-color-light-3: #4a5060;
+  --theme-color-transparent-1: rgba(26,26,26,0.6);
+  --theme-color-dark-1: #171717;
   --background-color: #fff;
   --background-color-transparent-1: rgba(255,255,255,0.85);
   --background-color-transparent-2: rgba(255,255,255,0.7);
   --background-color-transparent-3: rgba(255,255,255,0.4);
-  --background-color-grey: #e8e8e8;
-  --background-color-grey-light-1: #f1f1f1;
-  --background-color-grey-light-2: #f5f5f5;
-  --background-color-grey-transparent: rgba(232,232,232,0.25);
-  --background-color-grey-transparent-2: rgba(232,232,232,0.15);
-  --background-color-body: #f8f8f8;
+  --background-color-grey: #e7e9ee;
+  --background-color-grey-light-1: #f1f2f5;
+  --background-color-grey-light-2: #f4f5f7;
+  --background-color-grey-transparent: rgba(231,233,238,0.25);
+  --background-color-grey-transparent-2: rgba(231,233,238,0.15);
+  --background-color-body: #f6f7f9;
   --background-color-page: rgba(255,255,255,0.85);
-  --font-color: #373737;
+  --font-color: #2e3136;
   --font-color-invert: #fff;
-  --font-color-navbar: #4b4b4b;
+  --font-color-navbar: #41454c;
   --font-color-navbar-custom: #4b4b4b;
-  --font-color-light-1: #737373;
-  --font-color-light-2: #9b9b9b;
-  --font-color-light-3: #cdcdcd;
+  --font-color-light-1: #676d78;
+  --font-color-light-2: #9096a1;
+  --font-color-light-3: #c8cbd0;
   --link-hover-font-color: #fff;
   --banner-background: url("/assets/images/wallhaven-5yl597.webp");
   --banner-font-color: #fff;
   --nav-background-color: rgba(255,255,255,0.188);
-  --card-border-color: #d7d7d7;
+  --card-border-color: #d9dce2;
   --meow-box-shadow: 1px 1px 1px 1px rgba(42,42,42,0.051);
   --meow-card-shadow: 0px 3px 8px 6px rgba(42,42,42,0.051);
 }
@@ -40,29 +40,29 @@ body[data-mode='dark'] {
   --theme-color-light-3: #acd3f2;
   --theme-color-transparent-1: rgba(136,192,237,0.6);
   --theme-color-dark-1: #68afe8;
-  --background-color: #2d2d2d;
-  --background-color-transparent-1: rgba(45,45,45,0.88);
-  --background-color-transparent-2: rgba(45,45,45,0.7);
-  --background-color-transparent-3: rgba(45,45,45,0.4);
-  --background-color-grey: #454545;
-  --background-color-grey-light-1: #3e3e3e;
-  --background-color-grey-light-2: #373737;
-  --background-color-grey-transparent: rgba(69,69,69,0.25);
-  --background-color-grey-transparent-2: rgba(69,69,69,0.35);
-  --background-color-body: #202124;
-  --background-color-page: rgba(45,45,45,0.7);
-  --font-color: #bebec6;
-  --font-color-invert: #fcfcfc;
-  --font-color-navbar: #bebec6;
+  --background-color: #232733;
+  --background-color-transparent-1: rgba(35,39,51,0.88);
+  --background-color-transparent-2: rgba(35,39,51,0.7);
+  --background-color-transparent-3: rgba(35,39,51,0.4);
+  --background-color-grey: #353c4b;
+  --background-color-grey-light-1: #303644;
+  --background-color-grey-light-2: #2a303c;
+  --background-color-grey-transparent: rgba(53,60,75,0.25);
+  --background-color-grey-transparent-2: rgba(53,60,75,0.35);
+  --background-color-body: #191c26;
+  --background-color-page: rgba(35,39,51,0.7);
+  --font-color: #c6cbd7;
+  --font-color-invert: #f2f4fa;
+  --font-color-navbar: #c6cbd7;
   --font-color-navbar-custom: #bebec6;
-  --font-color-light-1: #9595a2;
-  --font-color-light-2: #808090;
-  --font-color-light-3: #5b5b67;
-  --link-hover-font-color: #2d2d2d;
+  --font-color-light-1: #959fb5;
+  --font-color-light-2: #7d89a4;
+  --font-color-light-3: #556079;
+  --link-hover-font-color: #1b1f2a;
   --banner-background: url("/assets/images/wallhaven-e7zogk.webp");
   --banner-font-color: #e0e0e0;
   --nav-background-color: transparent;
-  --card-border-color: #3b3b3b;
+  --card-border-color: #2d3340;
   --meow-box-shadow: 1px 1px 1px 1px rgba(187,187,187,0.012);
   --meow-card-shadow: none;
 }
@@ -1878,6 +1878,9 @@ body[data-mode="dark"] .home-article-info .icon {
   font-size: 1.2rem;
   margin: 2rem 0;
 }
+body[data-mode="dark"] .fiction-status {
+  color: var(--font-color-light-1);
+}
 @media (max-width: 900px) {
   .post-container {
     padding: 1.2rem 0;
@@ -3405,11 +3408,11 @@ body[data-mode="dark"] .toolbar-item .icon {
   border-radius: 0.3rem;
   height: 1.3rem;
   font-size: 0.8rem;
-  color: var(--link-hover-font-color);
-  background: var(--theme-color-light-2);
+  color: var(--font-color-invert);
+  background: var(--theme-color);
 }
 .post-copyright-link button:hover {
-  color: var(--font-color);
+  background: var(--theme-color-light-2);
 }
 .post-copyright-link button svg {
   height: 0.75rem;
@@ -3968,7 +3971,7 @@ body[data-mode="dark"] .toc-title .icon {
   align-items: flex-end;
 }
 .chatbox-item[right] .chatbox-content {
-  background: var(--theme-color-light-3);
+  background: var(--background-color);
 }
 .chatbox-avatar {
   width: 3rem;
@@ -4017,7 +4020,7 @@ body[data-mode="dark"] .chatbox-content {
   background: var(--background-color-grey-light-2);
 }
 body[data-mode="dark"] .chatbox-item[right] .chatbox-content {
-  color: var(--font-color-light-3);
+  color: var(--font-color);
 }
 @media (max-width: 900px) {
   .chatbox {
@@ -4307,7 +4310,7 @@ body[data-mode="dark"] details {
   filter: brightness(90%);
 }
 body[data-mode="dark"] details summary {
-  color: #454545;
+  color: #353c4b;
 }
 span.mask {
   position: relative;
@@ -4414,7 +4417,7 @@ body[data-mode="dark"] span.mask {
   background: #e5f7e2;
 }
 body[data-mode="dark"] .note {
-  color: #454545;
+  color: #353c4b;
   filter: brightness(90%);
 }
 .tabs {
@@ -4728,18 +4731,18 @@ body[data-mode="dark"] .timeline .timeline-icon:before {
   }
 }
 :root {
-  --waline-theme-color: #ffb347 !important;
-  --waline-active-color: #ffd191 !important;
-  --waline-badge-color: #ffb347 !important;
+  --waline-theme-color: #1a1a1a !important;
+  --waline-active-color: #6f7584 !important;
+  --waline-badge-color: #1a1a1a !important;
 }
 :root body[data-mode='dark'] {
-  --waline-bg-color: rgba(45,45,45,0.7) !important;
-  --waline-color: #bebec6 !important;
+  --waline-bg-color: rgba(35,39,51,0.7) !important;
+  --waline-color: #c6cbd7 !important;
   --waline-theme-color: #88c0ed !important;
   --waline-active-color: #b8d9f4 !important;
   --waline-badge-color: #88c0ed !important;
-  --waline-info-color: #808090;
-  --waline-info-bg-color: #373737;
+  --waline-info-color: #7d89a4;
+  --waline-info-bg-color: #2a303c;
 }
 @media (max-width: 900px) {
   :root {
@@ -4754,7 +4757,7 @@ div[data-waline] p {
   font-size: 0.85em !important;
 }
 .wl-card .wl-head .wl-nick {
-  color: #737373;
+  color: #676d78;
 }
 .wl-card .wl-badge {
   line-height: 1.5;
@@ -4764,5 +4767,5 @@ div[data-waline] p {
   margin: 0 0.5em 0 0 !important;
 }
 body[data-mode='dark'] .wl-card .wl-head .wl-nick {
-  color: #9595a2;
+  color: #959fb5;
 }

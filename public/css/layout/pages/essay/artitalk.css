@@ -40,7 +40,7 @@
   background: var(--background-color-grey-light-1);
 }
 #artitalk_main #readmore:hover {
-  background: var(--theme-color-light-1);
+  background: var(--theme-color);
   color: var(--font-color-invert);
   box-shadow: none;
 }

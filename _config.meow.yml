@@ -21,7 +21,7 @@ info:
 color:
   # Light Mode
   light:
-    theme_color: '#FFB347'
+    theme_color: '#1a1a1a'
   # Dark Mode
   dark:
     theme_color: '#88C0ED'
@@ -321,25 +321,26 @@ friends:
 fiction:
   # Customize the display values of fiction attributes
   attribute:
-    card_title: Fiction Information # Fiction Information
-    addition_title: Notice # Notice
-    type: Type # Type
-    fandom: Fandom # Fandom
-    relationship: Relationship # Relationship
-    character: Character # Character
-    rating: Rating # Rating
-    warning: Warning # Warning
-    status: Status # Status
+    card_title: 作品信息 # Fiction Information
+    addition_title: 注意 # Notice
+    type: 类型 # Type
+    fandom: 原作 # Fandom
+    relationship: 关系 # Relationship
+    character: 角色 # Character
+    rating: 分级 # Rating
+    warning: 预警 # Warning
+    status: 状态 # Status
   # Customize the display values of fiction rating
   rating:
-    0: General Audiences # General Audiences
-    1: Teen And Up Audiences # Teen And Up Audiences
-    2: Mature # Mature
-    3: Explicit # Explicit
+    -1: 未分级
+    0: 全年龄 # General Audiences
+    1: 青少年及以上 # Teen And Up Audiences
+    2: 成人向 # Mature
+    3: 成人级 # Explicit
   # Customize the display values of fiction statis
   status:
-    Y: COMPLETE # COMPLETE
-    N: TO BE CONTINUED... # TO BE CONTINUED...
+    Y: 已完结 # COMPLETE
+    N: 未完待续…… # TO BE CONTINUED...
 
 # Comment Module
 comment:
@@ -383,18 +384,18 @@ music:
   autoplay: false # Whether to play music automatically
   loop: all # How to loop music, all or one or none
   order: list # Play Music in which order, list or random
-  volume: 0.7 # Default volume, 0-1
+  volume: 0.5 # Default volume, 0-1
   lyric: true # Whether to display lyric
   meting: # Meting api config
-    api: # Custom Meting api url
-    server: # Music platform: netease, tencent, kugou, xiami, baidu
-    type: # Audio type: song, playlist, album, search, artist
-    id: # Audio source: song id / playlist id / album id / search keyword / artist
+    api: https://api.injahow.cn/meting/ # Custom Meting api url
+    server: netease # Music platform: netease, tencent, kugou, xiami, baidu
+    type: playlist # Audio type: song, playlist, album, search, artist
+    id: "8197566341" # Audio source: song id / playlist id / album id / search keyword / artist
 
 # CDN Configuration
 cdn:
   # Whether to enable CDN
-  enable: false
+  enable: true
   # CDN provider
   provider: jsdelivr # jsdelivr, unpkg, npmmirror, custom
   # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${name}@${version}/${path}
