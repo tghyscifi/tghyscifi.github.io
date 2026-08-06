@@ -123,7 +123,7 @@ sidebar:
     enable: true # Whether to show information card
     type: author # Which type of avatar to show, site or author
     status: # Status next to the avatar
-      emoji: 🐱 # false or emoji
+      emoji: 🤔 # false or emoji
       desc: "急头白脸开发博客中" # Describe the status
     link: /aboutme # Url for image clicking
     desc: "科幻爱好者，正在创作基于唯物史观的现实主义科幻系列《率月纪元》。" # Describe yourself or say something

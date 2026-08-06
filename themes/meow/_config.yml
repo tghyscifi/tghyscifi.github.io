@@ -359,7 +359,7 @@ music:
 # CDN Configuration
 cdn:
   # Whether to enable CDN
-  enable: false
+  enable: true
   # CDN provider
   provider: jsdelivr # jsdelivr, unpkg, npmmirror, custom
   # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${name}@${version}/${path}
