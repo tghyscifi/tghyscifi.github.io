@@ -10,12 +10,12 @@ root: /
 keywords:
 author: 瞳观幻域
 language: zh-CN
-timezone: ''
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://tghyscifi.github.io
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/ 
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -102,10 +102,36 @@ theme: meow
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 
 
 search:
   path: search.json
   field: post
   content: true
   format: striptags
+
+# RSS/Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: false
+  order_by: -date
+  icon: /assets/images/favicon.ico
+
+abbrlink:
+  start: 0 # the first id, default 0
+
+htmlnano-mini:
+  enable: true                        # Main switch
+  enableInDev: false                   # Whether to enable compression in the development server (hexo s)
+  exclude: 
+     #- '**/mycss.css'       
+  collapseWhitespace: conservative    # Conservatively collapse whitespace characters
+  removeComments: safe                # Safely remove comments
+  removeEmptyAttributes: true         # Remove empty attributes
+  cleancss: true                      # Enable clean-css to process inline CSS
+  uglifyjs: true                      # Enable compression of inline JavaScript
+

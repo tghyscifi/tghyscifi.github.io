@@ -1,9 +1,28 @@
 ---
 title: test
-date: 2026-08-05 11:45:14
+date: 
+updated: 
 tags:
-  - test
-excerpt: "用于测试博客功能"
+  - 测试
+categories:
+permalink: /posts/test/
+abbrlink:
+
+cover: 
+excerpt: 用于测试博客功能
+sticky: 
+toc: 
+comment:
+indent: 
+author:
+status:
+
+password: 114514
+abstract: 首先测试加密功能。
+message: 请输入密码：114514
+theme: 
+wrong_pass_message: 密码错误，请重新输入。
+decryptButton: {show: true, text: '提交'}
 ---
 
 <!--

@@ -80,9 +80,9 @@ search:
 banner:
   # Background image of banner under light/dark mode
   image:
-    light: assets/images/wallhaven-5yl597.webp
-    dark: assets/images/wallhaven-e7zogk.webp
-    is_fixed: true # Whether the image is fixed as background or scrollable with banner at homepage, true or false
+    light: assets/images/earth.webp
+    dark: assets/images/sky.webp
+    is_fixed: false # Whether the image is fixed as background or scrollable with banner at homepage, true or false
     position: center top # horizontal(left/center/right) vertical(top/center/bottom)
     repeat: no-repeat # repeat/repeat-x/repeat-y/no-repeat
   # Banner avatar (not at homepage)
@@ -139,7 +139,7 @@ sidebar:
         qq: brand-qq || https://qm.qq.com/q/TzJgjBrRGC
         qq-channel: brand-qq || https://pd.qq.com/s/1ve5ubxzj
         steam: brand-steam || https://steamcommunity.com/profiles/76561199032829132/
-        rss: brand-rss || 
+        rss: brand-rss || /atom.xml
 
 
   # Show announcement card, false or announcement text, markdown available
@@ -149,7 +149,7 @@ sidebar:
   # Links card
   links:
     enable: true # Whether to show additional links
-    title: Links # The title of links card
+    title: 快速直达 # The title of links card
     list: # List of links. link name: url
       🛠️ Hexo 博客框架: https://hexo.io/zh-cn/
       📦 Meow's Repository: https://github.com/chanwj/hexo-theme-meow
@@ -246,7 +246,7 @@ post:
 # Image Configuration
 image:
   image_caption: true # Whether to display image caption(alt text) in posts and pages
-  loding_image: assets/images/Meow-Loading.webp # Display loading image when target image is not loaded
+  loding_image: assets/images/loading.webp # Display loading image when target image is not loaded
   rounded_corners: true # Whether to display images with rounded corners
 
 # Code Block

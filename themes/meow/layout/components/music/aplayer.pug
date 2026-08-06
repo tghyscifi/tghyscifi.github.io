@@ -13,6 +13,42 @@ if theme.music.enable
     - musicList = site.data.music
 
   script.
+    const saveMusicState = () => {
+      try {
+        const ap = window.__meowAp;
+        if (!ap || !ap.audio || !ap.list.list.length) return;
+        sessionStorage.setItem('meow-music-state', JSON.stringify({
+          idx: ap.list.index,
+          time: ap.audio.currentTime || 0,
+          playing: !ap.audio.paused
+        }));
+      } catch (e) {}
+    };
+    window.addEventListener('pagehide', saveMusicState);
+
+    const restoreMusicState = (ap, data) => {
+      let saved = null;
+      try { saved = JSON.parse(sessionStorage.getItem('meow-music-state') || 'null'); } catch (e) {}
+      if (!saved || typeof saved.idx !== 'number' || saved.idx < 0 || saved.idx >= data.length) return;
+      ap.list.switch(saved.idx);
+      const tryResume = () => {
+        if (!saved.playing) return;
+        try { ap.play(); } catch (e) {}
+        // 若自动播放被浏览器策略拦截，等用户首次交互再续播；
+        // 若已自动播成功，用户交互时重复 play 是空操作，无害。
+        const resumeOnUser = () => { try { ap.play(); } catch (e) {} };
+        ['pointerdown', 'keydown', 'touchstart'].forEach(evt =>
+          document.addEventListener(evt, resumeOnUser, { capture: true, once: true })
+        );
+      };
+      const seekAndResume = () => {
+        try { ap.seek(saved.time && saved.time > 0 ? Math.min(saved.time, ap.audio.duration || saved.time) : 0); } catch (e) {}
+        tryResume();
+      };
+      if (ap.audio.readyState >= 1) seekAndResume();
+      else ap.audio.addEventListener('loadedmetadata', seekAndResume, { once: true });
+    };
+
     const initAplayer = (data) => {
       if (!data.length) return;
 
@@ -27,6 +63,7 @@ if theme.music.enable
         lrcType: !{lyric ? 3 : 0},
         audio: data
       });
+      window.__meowAp = ap;
 
       ap.on('play', () => {
         document.getElementById('music-player').setAttribute("play", "");
@@ -34,6 +71,8 @@ if theme.music.enable
       ap.on('pause', () => {
         document.getElementById('music-player').removeAttribute("play");
       });
+
+      restoreMusicState(ap, data);
     };
 
     const fetchData = () => {
