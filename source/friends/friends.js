@@ -8,7 +8,7 @@ const friendsData = {
       },
       list: [
         {
-          name: 'Kiwizzz',
+          name: 'Kiwiizzz',
           url: 'https://whoiskiwiizzz.github.io/',
           avatar: 'https://whoiskiwiizzz.github.io/imgs/me.jpg',
           desc: '哦对了，e8fq。'
