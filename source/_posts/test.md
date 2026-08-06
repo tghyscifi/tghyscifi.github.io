@@ -30,10 +30,10 @@ Fiction 作品信息卡
 -->
 {% fmeta %}
 type: 测试post
-fandom: 
-relationship: 
-character: 
-rating: -1
+fandom: N/A
+relationship: N/A
+character: N/A
+rating: 0
 warning: 仅用于测试
 status: Y
 {% endfmeta %}
