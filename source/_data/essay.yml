@@ -2,6 +2,11 @@ essay_info:
   author:
     瞳观幻域: assets/images/author.png
 essay_list:
+  - content: |
+      今天网站正式上线了，为了不至于闲置，把很久之前的旧稿都清了出来。
+      已经很久没有写点东西了，正在艰难复健中。
+    date: 2026-08-07 20:55:00
+    from: 瞳观幻域
   - content: 测试动态：Hello, World!
     date: 2026-08-05 20:04:34
     from: 瞳观幻域
@@ -9,4 +14,5 @@ essay_list:
       - assets/images/starry.webp
       - assets/images/sky.webp
       - assets/images/earth.webp
+  
 

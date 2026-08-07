@@ -25,7 +25,7 @@
                           img(src=url_for(item) alt='Essay Image')
                 .essay-bottom
                   .essay-info
-                    time= full_date(moment(essayList[i].date).tz('utc'), 'LLL')
+                    time= moment(essayList[i].date).utc().locale('zh-cn').format('LLL')
                     if essayList[i].from
                       span= "By " + essayList[i].from
           else

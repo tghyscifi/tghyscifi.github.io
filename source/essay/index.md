@@ -2,4 +2,5 @@
 title: 动态
 date: 2026-08-05 19:38:20
 type: essay
+comment: true
 ---
