@@ -151,10 +151,12 @@ sidebar:
     enable: true # Whether to show additional links
     title: 快速直达 # The title of links card
     list: # List of links. link name: url
-      🛠️ Hexo 博客框架: https://hexo.io/zh-cn/
-      📦 Meow's Repository: https://github.com/chanwj/hexo-theme-meow
-      🛸 中文科幻数据库: https://csfdb.cn/
-      📕 中文马克思主义文库: https://www.marxists.org/chinese/index.html
+      关于本站: https://tghyscifi.github.io/about
+      《率月纪元》中心页: https://tghyscifi.github.io/posts/ratomoondp
+      最新动态: https://tghyscifi.github.io/essay
+      
+
+
 
   # Categories card
   categories:
@@ -203,7 +205,7 @@ tag:
 
 # Posts Customization
 post:
-  excerpt_length: 200 # Max length of auto excerpt
+  excerpt_length: 120 # Max length of auto excerpt
   wordcount: true # Whether to show post wordcount
   # Reading time
   min2read:
@@ -211,8 +213,8 @@ post:
     cn: 350 # Reading speed of Chinese
     en: 200 # Reading speed of English
   view: true # Whether to display post view data
-  font_size: 17px # Font size of posts with unit
-  font_size_small: 15px # Font size of posts with unit on small screen
+  font_size: 20px # Font size of posts with unit
+  font_size_small: 18px # Font size of posts with unit on small screen
   indent: false # Whether to indent the first line of paragraph in post by 2em
   # Post TOC module
   toc:

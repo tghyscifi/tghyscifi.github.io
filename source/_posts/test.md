@@ -4,7 +4,7 @@ date:
 updated: 
 tags:
   - 测试
-categories:
+categories: 
 permalink: /posts/test/
 abbrlink:
 
@@ -18,8 +18,8 @@ author:
 status:
 
 password: 114514
-abstract: 首先测试加密功能。
-message: 请输入密码：114514
+abstract: 
+message: 测试加密功能，请输入密码：114514
 theme: 
 wrong_pass_message: 密码错误，请重新输入。
 decryptButton: {show: true, text: '提交'}
