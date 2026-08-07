@@ -16,7 +16,7 @@ comment: true
 - 最新的科学幻想严肃文学尝试
 - 后现代青年的 [日常随想](https://tghyscifi.github.io/essay)~~（发病记录）~~
 
-在 [率月纪元](https://tghyscfi.github.io/posts/ratomoondp) 中，溯月馆是神谕事件后，各国在月球上联合设立的率子科技研究机构，在统合七使徒的基础上整合全球科研与生产力量，致力于推进纯白立方带来的率子理论的知识转译与成果转化。南极事变后，随着两大集团矛盾加剧，使徒与技术人员各自出走，溯月馆逐渐淡出历史舞台。
+在 [率月纪元](https://tghyscifi.github.io/posts/ratomoondp) 中，溯月馆是神谕事件后，各国在月球上联合设立的率子科技研究机构，在统合七使徒的基础上整合全球科研与生产力量，致力于推进纯白立方带来的率子理论的知识转译与成果转化。南极事变后，随着两大集团矛盾加剧，使徒与技术人员各自出走，溯月馆逐渐淡出历史舞台。
 
 ## 关于作者
 <a id="about-author"></a>
@@ -25,7 +25,7 @@ comment: true
 
 {% title ' 瞳观幻域 ' %}
 
-科幻爱好者，正在创作基于唯物史观的现实主义长篇科幻系列 [《率月纪元》](https://tghyscfi.github.io/posts/ratomoondp)。
+科幻爱好者，正在创作基于唯物史观的现实主义长篇科幻系列 [《率月纪元》](https://tghyscifi.github.io/posts/ratomoondp)。
 
 网站[首页](https://tghyscifi.github.io)的侧边栏列出了我在各大社交平台的主页链接。
 
