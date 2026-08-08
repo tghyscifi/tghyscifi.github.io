@@ -1,7 +1,7 @@
 ---
 title: test
-date: 
-updated: 
+date: 2026-08-05
+updated: 2026-08-06
 tags:
   - 测试
   - 建站
