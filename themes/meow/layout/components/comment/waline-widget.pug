@@ -7,9 +7,9 @@ script.
       count: !{theme.sidebar.recent_comments.count},
     }).then(({ comments }) => {
       let result = ""
-      if(comments.data.length > 0) {
+      if(comments.data && comments.data.length > 0) {
         comments.data.forEach((comment) => {
-          result += `<a class='recent-comments-item' href='${comment.url}' target='_blank'><div class='recent-comments-user'><img src='${comment.avatar}' alt='User Avatar' /><span>${comment.nick}</span></div><div class='recent-comments-content'>${comment.orig}</div></a><br>`
+          result += `<a class='recent-comments-item' href='${comment.url}' target='_blank'><div class='recent-comments-user'><img src='${comment.avatar}' alt='User Avatar' /><span>${comment.nick}</span></div><div class='recent-comments-content'>${comment.orig || comment.comment}</div></a><br>`
         })
       } else {
         result = "!{__('comment.no_comment')}"
@@ -17,6 +17,10 @@ script.
       const el = document.querySelector('#sidebar-recent-comments .recent-comments-container')
       el.setAttribute('loaded', '')
       el.innerHTML = result
+    }).catch(() => {
+      const el = document.querySelector('#sidebar-recent-comments .recent-comments-container')
+      el.setAttribute('loaded', '')
+      el.innerHTML = "!{__('comment.no_comment')}"
     })
   }
 
