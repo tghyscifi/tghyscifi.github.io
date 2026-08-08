@@ -170,7 +170,7 @@ sidebar:
   recent_comments:
     enable: true # Whether to show recent comments card (waline required)
     count: 10 # Number of latest comments to display
-    loop_time: 8s # Time for one loop (with unit: seconds)
+    loop_time: 15s # Time for one loop (with unit: seconds)
 
 # Floating Toolbar
 toolbar:
@@ -351,7 +351,7 @@ comment:
   lazyload: true # Whether to load comment system when comment module enters the browser's viewport
   # Waline Config, https://waline.js.org/
   waline:
-    server_url: comment.tghyscifi.cloud-ip.cc # Waline server URL, see more at https://waline.js.org/guide/
+    server_url: https://comment.tghyscifi.cloud-ip.cc # Waline server URL, see more at https://waline.js.org/guide/
     lang: zh-CN # Language, e.g. zh-CN, en-US. https://waline.js.org/guide/features/i18n.html
     emoji:
       - 'https://registry.npmmirror.com/@waline/emojis/1.3.0/files/qq'
