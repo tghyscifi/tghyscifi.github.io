@@ -4,6 +4,7 @@ date:
 updated: 
 tags:
   - 测试
+  - 建站
 categories: 
 permalink: /posts/test/
 abbrlink:

@@ -36,7 +36,7 @@ global:
     type: ta # Icon Style Type, uc or ta or other custom collection
   selectable: true # Whether users can select text
   # Change page title when page onblur, false or onblur title text
-  onblur_title: "记得常来看看"
+  onblur_title: "记得常来看看哦"
   mouse_click_style: true # Whether to display colorful heart when clicking
 
 # Font Customization
