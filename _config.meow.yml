@@ -398,7 +398,7 @@ cdn:
   # Whether to enable CDN
   enable: true
   # CDN provider
-  provider: jsdelivr # jsdelivr, unpkg, npmmirror, custom
+  provider: npmmirror # jsdelivr, unpkg, npmmirror, custom
   # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${name}@${version}/${path}
   custom:
 
