@@ -55,7 +55,7 @@ menu:
   essay: /essay || ta-write
   categories: /categories || ta-category
   tags: /tags || ta-tag
-  about: /about || ta-about
+  about: /posts/about/ || ta-about
   friends: /friends || ta-friend
   comments: /comments || ta-comment
 
@@ -125,7 +125,7 @@ sidebar:
     status: # Status next to the avatar
       emoji: 🤔 # false or emoji
       desc: "急头白脸开发博客中" # Describe the status
-    link: /about # Url for image clicking
+    link: /posts/about/ # Url for image clicking
     desc: "科幻爱好者，正在创作基于唯物史观的现实主义科幻系列《率月纪元》。" # Describe yourself or say something
     statistic: true # Whether to show the total number of articles, categories and tags
     social: # Social profiles
@@ -151,9 +151,9 @@ sidebar:
     enable: true # Whether to show additional links
     title: 快速直达 # The title of links card
     list: # List of links. link name: url
-      关于本站: https://tghyscifi.github.io/about
-      最新动态: https://tghyscifi.github.io/essay
-      《率月纪元》中心页: https://tghyscifi.github.io/posts/ratomoondp
+      ℹ️关于本站: /posts/about/
+      ⁉️最新动态: https://tghyscifi.github.io/essay
+      📚《率月纪元》中心页: https://tghyscifi.github.io/posts/ratomoondp
 
 
 

@@ -8,8 +8,6 @@ categories: 导航
 permalink: /posts/ratomoondp/
 cover: /assets/images/covers/ratomoondp.webp
 excerpt: 长篇系列《率月纪元》中心导航页面。
-sticky: 10
-
 ---
 
 ## 简介
