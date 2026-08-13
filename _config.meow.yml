@@ -58,6 +58,7 @@ menu:
   about: /posts/about/ || ta-about
   friends: /friends || ta-friend
   comments: /comments || ta-comment
+  APP: /releases || ta-down
 
 # Navigation Bar Configuration
 menu_options:

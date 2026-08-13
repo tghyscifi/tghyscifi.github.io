@@ -65,6 +65,7 @@ header
   font-size: 1.3rem
   display: flex
   align-items: center
+  flex-wrap: nowrap
   position: absolute
   left: 50%
   transform: translateX(-50%)
@@ -76,6 +77,7 @@ header
   flex-direction: column
   align-items: center
   justify-content: center
+  flex-shrink: 0
   gap: .8rem
   transition: all .5s ease
   &:after
@@ -91,6 +93,7 @@ header
     display: flex
     align-items: center
     gap: .3rem
+    white-space: nowrap
   .icon
     height: 1.25rem
   &:hover
@@ -268,3 +271,9 @@ header
       backdrop-filter: blur(.3rem)
       #menu-aside-container
         transform: translateX(0)
+
+@media (max-width 1200px)
+  #nav-menu
+    font-size: 1.05rem
+  .menu-item a
+    padding: .2rem .6rem

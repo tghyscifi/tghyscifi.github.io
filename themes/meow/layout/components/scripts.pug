@@ -79,7 +79,10 @@
   
   if page.type == "friends"
     != js('friends/friends')
-  
+
+  if page.type == "releases"
+    != js('js/releases/releases')
+
   if page.type == "essay" && theme.essay.type == "artitalk"
     != importJS('artitalk','3.3.4','artitalk.js')
     != partial('components/essay/artitalk', {}, {cache: true})

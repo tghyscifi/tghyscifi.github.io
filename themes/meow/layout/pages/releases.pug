@@ -1,0 +1,25 @@
+//- Releases page: latest APP version info from GitHub Releases API
+- const repoUrl = 'https://github.com/tghyscifi/tghyscifi.github.io'
+
+.page-body.markdown
+  != page.content
+
+#releases-info.releases-info
+  .releases-loading
+    span= __('loading')
+  .releases-error(hidden)
+    p 抱歉，暂时无法获取最新版本信息，请稍后再试。
+    a.releases-btn(href=repoUrl + '/releases' target='_blank' rel='noopener') 前往 GitHub Releases 查看
+  .releases-card(hidden)
+    .releases-card-head
+      .releases-tag-row
+        span.releases-badge 最新版本
+        span#releases-version.releases-tag
+      h3#releases-title.releases-title
+      .releases-meta
+        span#releases-published.releases-date
+    .releases-body#releases-body
+    .releases-assets#releases-assets
+    .releases-foot
+      a#releases-html-link.releases-btn(href='#' target='_blank' rel='noopener') 在 GitHub 查看此版本
+      a.releases-btn.releases-btn-ghost(href=repoUrl + '/releases' target='_blank' rel='noopener') 查看全部版本
