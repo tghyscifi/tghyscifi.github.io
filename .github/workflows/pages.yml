@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - master
+  release:
+    types: [published]
   workflow_dispatch:
+
+# Ensure build+deploy runs serialize, no matter which trigger fires
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -14,6 +21,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
+          # Reuse the latest blog code even when triggered by a release tag
+          ref: ${{ github.event_name == 'release' && 'master' || github.ref }}
       - name: Use Node.js 26
         uses: actions/setup-node@v4
         with:

@@ -11,6 +11,11 @@ const HEADERS_CONTENT = `# Cache-Control for GitHub Pages
   Cache-Control: no-cache, no-store, must-revalidate
   Pragma: no-cache
 
+# App update check: always fetch fresh
+/releases/update.json
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+
 # Root page
 /
   Cache-Control: no-cache, no-store, must-revalidate

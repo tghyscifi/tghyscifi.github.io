@@ -33,6 +33,17 @@
       localStorage.setItem('color-mode', '#{theme.color.mode.default}' || 'light');
     }
     document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
+
+  script.
+    // Reset scroll on load: prevents WebView/browser restoring an old scroll
+    // offset that lands mid-page (e.g. jumping past the homepage banner).
+    // Anchor URLs (#comments etc.) keep their native scroll-to-anchor behavior.
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
   
   != js('js/theme/tools/utils')
 

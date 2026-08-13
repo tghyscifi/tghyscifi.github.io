@@ -3,6 +3,11 @@ essay_info:
     瞳观幻域: assets/images/author.png
 essay_list:
   - content: |
+      为溯月馆做了一个安卓 APP，在首页目录中点击 APP 即可下载。
+      vibe coding 真是神了，一行代码不写，全程用 Android Studio 的 harness 带 dsv4f 轻轻松松把需求转化为成品。
+    date: 2026-08-13 13:41:35
+    from: 瞳观幻域
+  - content: |
       突然感觉这个动态功能的定位有点尴尬：
       的确存在发这种小段随想的需求，但发在动态页几乎没人会去看，毕竟博客没有推送。
       较长的随想以博客的形式发出来，更让动态的功能显得多余。

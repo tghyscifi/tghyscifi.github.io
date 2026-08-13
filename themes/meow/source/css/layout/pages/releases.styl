@@ -63,9 +63,59 @@
 .releases-body
   font-size: .95rem
   line-height: 1.7
-  white-space: pre-wrap
   word-break: break-word
   padding: .4rem 0 .2rem
+  > *:first-child
+    margin-top: 0
+  > *:last-child
+    margin-bottom: 0
+  h3, h4, h5, h6
+    margin: 1.1em 0 .5em
+    font-family: var(--meow-font-title)
+  h3
+    font-size: 1.15rem
+  h4
+    font-size: 1.05rem
+  h5, h6
+    font-size: 1rem
+  p
+    margin: .5em 0
+  ul, ol
+    margin: .5em 0
+    padding-left: 1.5em
+  li
+    margin: .2em 0
+  blockquote
+    margin: .7em 0
+    padding: .1em 1em
+    border-left: 3px solid var(--theme-color)
+    color: var(--font-color-light-1)
+    background: var(--background-color-grey-transparent-2)
+    border-radius: 0 8px 8px 0
+  code
+    font-family: var(--meow-font-code)
+    font-size: .88em
+    padding: .1em .4em
+    border-radius: 4px
+    background: var(--background-color-grey)
+  a
+    color: var(--link-font-color)
+    text-decoration: underline
+  hr
+    margin: 1em 0
+    border: 0
+    border-top: 1px dashed var(--card-border-color)
+  table
+    width: 100%
+    border-collapse: collapse
+    margin: .7em 0
+    font-size: .92em
+    th, td
+      border: 1px solid var(--card-border-color)
+      padding: .35em .8em
+      text-align: left
+    th
+      background: var(--background-color-grey)
 
 .releases-assets
   display: flex
