@@ -13,6 +13,12 @@ const friendsData = {
           avatar: 'https://whoiskiwiizzz.github.io/imgs/me.jpg',
           desc: '哦对了，e8fq。'
         },
+        {
+          name: '星辰 Project',
+          url: 'https://zoomy14112.github.io/',
+          avatar: '',
+          desc: '由千秋星辰所撰写的随笔集。'
+        },
       ]
     },
     {
