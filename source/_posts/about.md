@@ -27,6 +27,7 @@ excerpt: 关于溯月馆，关于瞳观幻域，关于率月纪元，关于初�
 - [关于](https://tghyscifi.github.io/about/)：查看网站即博主的简介，即本页。
 - [友链](https://tghyscifi.github.io/friends/)：推广引流页，欢迎大家入驻~
 - [留言](https://tghyscifi.github.io/comments/)：供大家留言的区域。
+- [APP](https://tghyscifi.github.io/releases/)：溯月馆 APP，当前仅支持安卓系统。
 
 在 [率月纪元](https://tghyscifi.github.io/posts/ratomoondp) 系列中，溯月馆是神谕事件后，各国在月球上联合设立的率子科技研究机构，在统合七使徒的基础上整合全球科研与生产力量，致力于推进纯白立方带来的率子理论的知识转译与成果转化。南极事变后，随着两大集团矛盾加剧，使徒与技术人员各自出走，溯月馆逐渐淡出历史舞台。
 

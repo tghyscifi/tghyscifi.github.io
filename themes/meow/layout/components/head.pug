@@ -73,6 +73,13 @@ if theme.font.custom
 
 != css('css/style')
 
+//- WebView 显示异常防御:禁用浏览器滚动锚定,
+//- 避免页面在字体/图片懒加载完成后 relayout 时被推到页中位置
+style.
+  html {
+    overflow-anchor: none;
+  }
+
 case page.type
   when "essay"
     if theme.essay.type == "local"

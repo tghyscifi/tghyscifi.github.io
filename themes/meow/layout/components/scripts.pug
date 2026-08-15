@@ -38,13 +38,65 @@
     // Reset scroll on load: prevents WebView/browser restoring an old scroll
     // offset that lands mid-page (e.g. jumping past the homepage banner).
     // Anchor URLs (#comments etc.) keep their native scroll-to-anchor behavior.
+    // Runs for a while after load because late CSS/fonts/lazy images can trigger
+    // layout that re-positions the scroll (scroll anchoring / restoration).
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    if (!location.hash) {
-      window.scrollTo(0, 0);
-    }
-  
+    (function () {
+      var hasHash = !!location.hash;
+      var userTouched = false;
+      // 用户主动滚动/点击后停止干预,避免与阅读手势打架
+      ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (evt) {
+        window.addEventListener(evt, function () { userTouched = true; }, { passive: true, capture: true });
+      });
+      var rounds = 0;
+      var forceTop = function () {
+        if (userTouched || hasHash) return;
+        if (window.scrollY > 0) window.scrollTo(0, 0);
+        if (++rounds < 40) setImmediate ? setImmediate(forceTop) : setTimeout(forceTop, 50);
+      };
+      // 立即 + 持续轮询 2s,覆盖早期与晚期 relayout
+      forceTop();
+      setTimeout(forceTop, 500);
+      setTimeout(forceTop, 1500);
+      setTimeout(forceTop, 3000);
+    })();
+
+  // WebView 可视诊断浮层:仅 Android 系统 WebView(含内嵌)显示,
+  // 用于排查 APP WebView 首屏显示异常(scroll 偏移 / 100vh 解析)。
+  script.
+    (function () {
+      var ua = navigator.userAgent;
+      var isAndroidWebView = /Android/i.test(ua) && (ua.indexOf('wv') > -1 || /Version\/4\.0/i.test(ua));
+      if (!isAndroidWebView) return;
+      var panel = document.createElement('div');
+      panel.setAttribute('style', 'position:fixed;left:8px;bottom:56px;z-index:2147483647;max-width:72vw;padding:6px 8px;background:rgba(0,0,0,.82);color:#8f8;font:11px/1.45 Menlo,Consolas,monospace;white-space:pre;border-radius:6px;pointer-events:none;');
+      document.body.appendChild(panel);
+      function snap() {
+        var b = document.getElementById('home-banner');
+        var r = b ? b.getBoundingClientRect() : null;
+        var h = document.getElementsByClassName('home-article');
+        var f = h.length ? h[0].getBoundingClientRect() : null;
+        var p = document.createElement('div');
+        p.style.cssText = 'height:1vh;width:1px;position:absolute;visibility:hidden;';
+        document.body.appendChild(p);
+        var vhPx = getComputedStyle(p).height;
+        p.remove();
+        panel.textContent =
+          'sy=' + window.scrollY +
+          '\nih=' + window.innerHeight + ' vv=' + (window.visualViewport ? Math.round(window.visualViewport.height) : '-') +
+          '\nclH=' + document.documentElement.clientHeight + ' scH=' + document.documentElement.scrollHeight +
+          '\n1vhPx=' + vhPx +
+          '\nbanner top=' + (r ? Math.round(r.top) : '-') + ' h=' + (r ? Math.round(r.height) : '-') +
+          '\n1stcard top=' + (f ? Math.round(f.top) : '-') + ' h=' + (f ? Math.round(f.height) : '-') +
+          '\nready=' + document.readyState + ' url=' + location.pathname;
+      }
+      snap();
+      window.addEventListener('load', snap);
+      window.setInterval(snap, 1000);
+    })();
+
   != js('js/theme/tools/utils')
 
   if is_home() && theme.banner.subtitle.enable && theme.banner.subtitle.effect && theme.banner.subtitle.text.length > 0

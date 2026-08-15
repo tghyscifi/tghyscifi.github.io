@@ -11,3 +11,5 @@ count: false
 下方展示 APP 的最新版本与更新日志，点击文件启动下载；历史版本请前往 GitHub Releases 查看。
 
 > 📌 若页面未能自动加载版本信息，请直接访问 [GitHub Releases](https://github.com/tghyscifi/tghyscifi.github.io/releases) 获取最新版本。
+
+> 如果下载速度过慢，请在这里下载：[清华云盘-溯月馆 APP](https://cloud.tsinghua.edu.cn/d/98233cfc4e5641cd9d8d/)

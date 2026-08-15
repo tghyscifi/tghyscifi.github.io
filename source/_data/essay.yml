@@ -3,10 +3,16 @@ essay_info:
     瞳观幻域: assets/images/author.png
 essay_list:
   - content: |
+      终于把正式版做出来了。Google 自带的Agent是真的拉胯，搭配 dsv4f 日常左右脑互搏。
+    date: 2026-08-15 13:00:45
+    from: 瞳观幻域
+    
+  - content: |
       为溯月馆做了一个安卓 APP，在首页目录中点击 APP 即可下载。
       vibe coding 真是神了，一行代码不写，全程用 Android Studio 的 harness 带 dsv4f 轻轻松松把需求转化为成品。
     date: 2026-08-13 13:41:35
     from: 瞳观幻域
+
   - content: |
       突然感觉这个动态功能的定位有点尴尬：
       的确存在发这种小段随想的需求，但发在动态页几乎没人会去看，毕竟博客没有推送。
@@ -16,6 +22,7 @@ essay_list:
       所以还是算了吧。
     date: 2026-08-11 20:05:57
     from: 瞳观幻域
+
   - content: |
       整理了建站经验，希望能帮到未来的某个沙雕网友。
       发现学cs的同学中有博客的人挺少的，可能现在已经不流行这玩意了吧。
