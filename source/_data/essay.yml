@@ -3,6 +3,16 @@ essay_info:
     瞳观幻域: assets/images/author.png
 essay_list:
   - content: |
+      突然意识到自己好久没更新博客了。
+      前段时间一直在忙宿舍搬家的事，紧接着又是夏季学期的课程，终于回到了那种每天都在忙但不知在忙什么的生活。
+      忙里偷闲看完了闪哈2，预计要出一个观后感，连带着还有对[《率月纪元》](https://tghyscifi.github.io/posts/ratomoondp/)正传旧稿的锐评。
+      这里贴一个实践课的整活，学钳工急头白脸锯半天做出的尤物。
+    date: 2026-08-21 23:05:06
+    from: 瞳观幻域
+    image:
+      - assets/images/illus/milkyfrog.webp
+
+  - content: |
       终于把正式版做出来了。Google 自带的Agent是真的拉胯，搭配 dsv4f 日常左右脑互搏。
     date: 2026-08-15 13:00:45
     from: 瞳观幻域
