@@ -103,7 +103,7 @@ if theme.music.enable || page.music
 
 if theme.share.notify
   if theme.cdn.enable
-    != css('https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css')
+    != importCSS('node-snackbar','0.1.16','dist/snackbar.min.css')
   else
     != css('css/third-party/dist/snackbar.min.css')
 

@@ -81,7 +81,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -120,6 +120,10 @@ feed:
   content: true
   order_by: -date
   icon: /assets/images/favicon.ico
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
 
 abbrlink:
   start: 0 # the first id, default 0

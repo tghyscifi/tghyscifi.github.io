@@ -45,9 +45,9 @@ font:
   default_font_link: https://cdn.jsdelivr.net/npm/@chinese-fonts/syst@latest/dist/SourceHanSerifCN/result.css # Url of default font
   default_font_family: "'Source Han Serif CN VF', 'PingFang SC', 'Microsoft YaHei', serif" # Define default fonts
   title_font_link: # Url of title font
-  title_font_family: "'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define title fonts
+  title_font_family: "'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define title fonts
   code_font_link: assets/fonts/SFMonoRegular/result.css # Url of code font
-  code_font_family: "'SF Mono', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif" # Define code fonts
+  code_font_family: "'SF Mono', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif" # Define code fonts
 
 # Navigation Bar
 menu:
