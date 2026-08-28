@@ -42,7 +42,7 @@ status: Y
 <!--
 Music Player 音乐播放器
 -->
-{% music [playerId] [type] %}
+{% music netease playlist %}
 server: netease
 type: playlist
 id: "8197566341"
