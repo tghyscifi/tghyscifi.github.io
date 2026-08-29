@@ -389,10 +389,11 @@ music:
   volume: 0.5 # Default volume, 0-1
   lyric: true # Whether to display lyric
   meting: # Meting api config
-    api: https://api.injahow.cn/meting/ # Custom Meting api url
+    api: https://api.qijieya.cn/meting/ # Custom Meting api url
+    #https://api.injahow.cn/meting/
     server: netease # Music platform: netease, tencent, kugou, xiami, baidu
     type: playlist # Audio type: song, playlist, album, search, artist
-    id: "8197566341" # Audio source: song id / playlist id / album id / search keyword / artist
+    id: "8251938484" # Audio source: song id / playlist id / album id / search keyword / artist
 
 # CDN Configuration
 cdn:
