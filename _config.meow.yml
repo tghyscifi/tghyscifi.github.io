@@ -59,6 +59,7 @@ menu:
   friends: /friends || ta-friend
   comments: /comments || ta-comment
   APP: /releases || ta-download
+  听歌: /music || ta-music
 
 # Navigation Bar Configuration
 menu_options:
