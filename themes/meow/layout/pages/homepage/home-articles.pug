@@ -16,7 +16,7 @@
           if post.sticky
             .home-article-sticky= __('sticky')
           
-          a(href=url_for(post.path))= post.title
+          a(href=url_for(post.path))!= post.title
 
         if post.excerpt != 'false'
           .home-article-excerpt

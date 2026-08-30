@@ -4,7 +4,7 @@
   .post-copyright-link
     span
       | #{__('copyright.link')}
-      a(href=page.permalink)= page.title
+      a(href=page.permalink)!= page.title
     button.copy-text(type='button' data-text=full_url_for(page.path))= __('copy')
 
   if theme.post.copyright.type == 1

@@ -29,7 +29,7 @@ block content
                     .archive-post-title
                       if post.encrypt
                         != getSvg('lock')
-                      span= post.title
+                      span!= post.title
                     .archive-post-date= date(post.date)
   
   .page-paginator

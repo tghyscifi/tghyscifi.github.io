@@ -34,11 +34,22 @@ const music = (args, content) => {
   } else {
     let metingParams = hexo.render.renderSync({ text: content, engine: 'yaml' });
     let meting_api = `${themeCfg.music.meting.api}?server=${metingParams.server}&type=${metingParams.type}&id=${metingParams.id}&r=${Math.random()}`;
+    let excludeList = metingParams.exclude;          // 支持：数组 / 单个歌名 / 数字索引
+    if (typeof excludeList === 'string') excludeList = [excludeList];
+    if (!Array.isArray(excludeList)) excludeList = [];
+    const startPos = metingParams.start;             // 支持：数字索引或歌名字符串
     scriptContent = `
       const apFn_${id} = () => {
         fetch('${meting_api}')
           .then(res => res.json())
           .then(result => {
+            if (!result.length) return;
+            const exclude = ${JSON.stringify(excludeList)};
+            if (exclude.length) {
+              result = result.filter((song, i) =>
+                !exclude.some(e => e === song.name || Number(e) - 1 === i)
+              );
+            }
             if (!result.length) return;
             const ap_${id} = new APlayer({
               container: document.getElementById('${playerId}'),
@@ -50,6 +61,13 @@ const music = (args, content) => {
               lrcType: ${themeCfg.music.lyric ? 3 : 0},
               audio: result
             });
+            const start = ${JSON.stringify(startPos)};
+            if (start !== undefined && start !== null) {
+              const idx = typeof start === 'number'
+                ? start - 1
+                : result.findIndex(s => s.name === start);
+              if (idx >= 0) ap_${id}.list.switch(idx);
+            }
           });
       };
       window.apFnList ? window.apFnList.push(apFn_${id}) : window.apFnList = [apFn_${id}];
