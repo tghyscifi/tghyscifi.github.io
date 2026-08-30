@@ -1,7 +1,6 @@
 ---
 title: 关于
-date: 2026-08-05 14:45:14
-sticky: 100                
+date: 2026-08-05 14:45:14              
 permalink: /posts/about/    
 excerpt: 关于溯月馆，关于瞳观幻域，关于率月纪元，关于初心。
 ---
