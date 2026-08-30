@@ -59,7 +59,7 @@ menu:
   friends: /friends || ta-friend
   comments: /comments || ta-comment
   APP: /releases || ta-download
-  听歌: /music || ta-music
+  tools: /posts/tools/ || ta-tool
 
 # Navigation Bar Configuration
 menu_options:
@@ -156,7 +156,7 @@ sidebar:
       ℹ️关于本站: /posts/about/
       ❗最新动态: https://tghyscifi.github.io/essay
       📚《率月纪元》中心页: https://tghyscifi.github.io/posts/ratomoondp
-
+      🎵在线听歌: https://tghyscifi.github.io/music/
   # Categories card
   categories:
     enable: true # Whether to show categories card
