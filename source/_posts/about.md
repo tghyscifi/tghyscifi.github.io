@@ -1,8 +1,8 @@
 ---
-title: 关于
+title: 欢迎来到溯月馆
 date: 2026-08-05 14:45:14              
-permalink: /posts/about/    
-excerpt: 关于溯月馆，关于瞳观幻域，关于率月纪元，关于初心。
+permalink: /posts/about/
+excerpt: 这里是溯月馆，理想与现实交汇的地方。
 ---
 
 ## 关于本站

@@ -1,8 +1,10 @@
 ---
-title: 点歌台
+title: 在线听歌
 date: 2026-08-23 14:00:00
 comment: true
 ---
+
+解析网易云/QQ音乐平台链接，支持 VIP 歌曲。
 
 <div class="music-app">
   <div class="music-parse-bar">

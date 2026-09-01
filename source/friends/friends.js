@@ -19,6 +19,12 @@ const friendsData = {
           avatar: '',
           desc: '由千秋星辰所撰写的随笔集。'
         },
+        {
+          name: "初叶的小窝",
+          url: 'https://qiu.chuyel.top/',
+          avatar: '',
+          desc: '本站 MetingAPI 贡献者。'
+        }
       ]
     },
     {
@@ -73,8 +79,7 @@ const friendsData = {
           url: 'https://claude.com/product/claude-code',
           avatar: '',
           desc: 'A/最近又在哪里发财啊'
-        }
-
+        },
       ]
     },
   ]

@@ -351,7 +351,7 @@ comment:
   lazyload: true # Whether to load comment system when comment module enters the browser's viewport
   # Waline Config, https://waline.js.org/
   waline:
-    server_url: https://tghyscifi.vercel.app/ # Waline server URL, see more at https://waline.js.org/guide/
+    server_url: https://comment.tghyscifi.cloud-ip.cc/ # Waline server URL, see more at https://waline.js.org/guide/
     lang: zh-CN # Language, e.g. zh-CN, en-US. https://waline.js.org/guide/features/i18n.html
     emoji:
       - 'https://registry.npmmirror.com/@waline/emojis/1.3.0/files/qq'
