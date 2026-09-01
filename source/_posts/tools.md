@@ -5,6 +5,8 @@ permalink: /posts/tools/
 excerpt: 持续更新中……
 ---
 
+有想要的功能可以在下面留言。
+
 {% button %}
 - name: 在线听歌
   url: https://tghyscifi.github.io/music

@@ -69,6 +69,30 @@ const friendsData = {
           desc: '🐈简洁可爱的响应式Hexo主题'
         },
         {
+          name: 'Waline',
+          url: 'https://waline.js.org/',
+          avatar: '',
+          desc: '一款简洁、安全的评论系统'
+        },
+        {
+          name: 'Render',
+          url: 'https://render.com/',
+          avatar: '',
+          desc: 'The cloud for builders'
+        },
+        {
+          name: 'Neon',
+          url: 'https://neon.com/',
+          avatar: '',
+          desc: 'Postgres backends for apps and agents'
+        },
+        {
+          name: '并行智算云',
+          url: 'https://ai.paratera.com/',
+          avatar: '',
+          desc: '噫~这都有算力券收的，嚯嚯嚯'
+        },
+        {
           name: 'DeepSeek',
           url: 'https://www.deepseek.com/',
           avatar: '',
