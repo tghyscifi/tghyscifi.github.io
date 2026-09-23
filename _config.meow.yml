@@ -142,6 +142,7 @@ sidebar:
         qq-channel: brand-qq || https://pd.qq.com/s/1ve5ubxzj
         steam: brand-steam || https://steamcommunity.com/profiles/76561199032829132/
         rss: brand-rss || /atom.xml
+        essay-rss: brand-rss || /essay/atom.xml
 
 
   # Show announcement card, false or announcement text, markdown available

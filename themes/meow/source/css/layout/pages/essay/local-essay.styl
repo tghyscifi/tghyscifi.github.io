@@ -90,6 +90,18 @@
   margin-top: 2rem
   color: var(--font-color-light-1)
 
+// RSS entry link in the essay page title bar
+.essay-rss
+  display: flex
+  align-items: center
+  flex-shrink: 0
+  .icon
+    height: 1.5rem
+    opacity: .45
+    transition: opacity .2s ease
+  &:hover .icon
+    opacity: 1
+
 @media (max-width 900px)
   .essay-item
     flex-direction: column
