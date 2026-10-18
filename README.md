@@ -77,9 +77,19 @@
 
 ```bash
 npm ci
-npm run server
+npm run build
+npm run preview
 ```
 
-`npm ci` 会按锁文件安装项目依赖，包括 Hexo、Hexo 命令行工具和预览服务器；`npm run server` 调用项目内的 Hexo 命令，无需另行安装 Hexo 或全局安装 `hexo-cli`。
+`npm ci` 会按锁文件安装项目依赖，包括 Hexo 和构建工具，无需另行安装 Hexo 或全局安装 `hexo-cli`。
 
-打开 [http://localhost:4000](http://localhost:4000) 预览网站。使用 `npm run build` 生成静态文件，输出目录为 `public/`。
+打开 [中文界面](http://localhost:4000/) 或 [英文界面](http://localhost:4000/en/) 预览。`npm run build` 分别构建两种界面并合并到 `public/`；`npm run preview` 提供本地静态预览。修改后重新构建，再刷新页面。
+
+英文版当前翻译标题与控件，博文、小说和动态正文仍为中文；订阅入口继续使用中文 RSS，不生成英文 RSS。中文内容的实时开发预览仍可使用 `npm run server`。
+
+### 英文界面的维护与验证
+
+- 通用控件词典位于 `themes/meow/languages/en.yml` 和 `zh-CN.yml`，沿用 Hexo 的多语言机制。
+- 博文标题、分类标签显示名和英文主题配置位于 `locales/en.yml`；原始中文内容保持单份维护。
+- 构建后执行 `npm run check:i18n`，验证标题对应、正文保留、语言切换和 RSS 范围。
+- 分阶段计划与回退方法见 [英文界面实施计划](docs/english-ui-plan.md)。
