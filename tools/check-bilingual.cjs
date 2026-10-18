@@ -8,6 +8,9 @@ const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'public');
 const catalog = yaml.load(fs.readFileSync(path.join(root, 'locales/en.yml'), 'utf8'));
 const read = route => cheerio.load(fs.readFileSync(path.join(output, route.replace(/^\//, ''), 'index.html'), 'utf8'));
+const theme = yaml.load(fs.readFileSync(path.join(root, '_config.meow.yml'), 'utf8'));
+const enHome = read('/en/');
+for (const subtitle of theme.banner.subtitle.text) assert(!enHome('script').text().includes(subtitle), 'English banner must not rotate Chinese subtitles');
 let articleCount = 0;
 for (const [route, title] of Object.entries(catalog.titles)) {
   const zh = read(route);
@@ -37,12 +40,21 @@ const search = JSON.parse(fs.readFileSync(path.join(output, 'en/search.json'), '
 assert.equal(search.length, articleCount, 'English search covers all posts');
 for (const entry of search) assert(entry.url.startsWith('/en/posts/'), entry.url);
 const protectedSource = fs.readFileSync(path.join(root, 'source/_posts/test.md'), 'utf8').split(/^---\s*$/m).slice(2).join('---');
-const protectedMarker = protectedSource.split(/\r?\n/).find(line => (line.match(/\p{Script=Han}/gu) || []).length >= 12);
+const protectedMarkers = protectedSource.match(/[\p{Script=Han}，。！？、]{12,}/gu) || [];
 const protectedEntry = search.find(entry => entry.url === '/en/posts/test/');
 assert(protectedEntry, 'Protected post stays indexed by title');
-if (protectedMarker) assert(!protectedEntry.content.includes(protectedMarker), 'Protected body must not leak into search');
+const atom = cheerio.load(fs.readFileSync(path.join(output, 'atom.xml'), 'utf8'), { xmlMode: true });
+const protectedFeed = atom('entry').filter((_, entry) => atom(entry).find('id').text().includes('/posts/test/')).text();
+for (const marker of protectedMarkers) {
+  assert(!protectedEntry.content.includes(marker), 'Protected body must not leak into search');
+  assert(!protectedFeed.includes(marker), 'Protected body must not leak into RSS');
+}
 const dictionary = file => new (require('hexo-i18n'))().set('locale', yaml.load(fs.readFileSync(path.join(root, file), 'utf8'))).get('locale');
 const zhWords = dictionary('themes/meow/languages/zh-CN.yml');
 const enWords = dictionary('themes/meow/languages/en.yml');
-for (const key of Object.keys(zhWords)) assert(key in enWords, 'Missing English dictionary key: ' + key);
+for (const key of Object.keys(zhWords)) {
+  assert(key in enWords, 'Missing English dictionary key: ' + key);
+  const placeholders = value => (String(value).match(/\{\w+\}|%s/g) || []).sort();
+  assert.deepEqual(placeholders(enWords[key]), placeholders(zhWords[key]), 'Placeholder mismatch: ' + key);
+}
 console.log(JSON.stringify({ result: 'passed', titlePairs: Object.keys(catalog.titles).length, articles: articleCount, updates: updates(enEssay).length, chineseFeeds: 2, englishFeeds: 0 }));

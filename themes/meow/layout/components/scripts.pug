@@ -54,7 +54,7 @@
       var forceTop = function () {
         if (userTouched || hasHash) return;
         if (window.scrollY > 0) window.scrollTo(0, 0);
-        if (++rounds < 40) setImmediate ? setImmediate(forceTop) : setTimeout(forceTop, 50);
+        if (++rounds < 40) typeof window.setImmediate === 'function' ? window.setImmediate(forceTop) : setTimeout(forceTop, 50);
       };
       // 立即 + 持续轮询 2s,覆盖早期与晚期 relayout
       forceTop();
