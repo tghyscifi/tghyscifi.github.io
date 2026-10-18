@@ -73,6 +73,7 @@ const renderContent = (essay, siteUrl) => {
 };
 
 hexo.extend.generator.register('essay-feed', function (locals) {
+  if (/^en(?:-|$)/i.test(String(hexo.config.language))) return [];
   const themeCfg = hexo.theme.config;
   if (!themeCfg.essay || themeCfg.essay.type !== 'local') return;
 
@@ -149,6 +150,7 @@ hexo.extend.generator.register('essay-feed', function (locals) {
 hexo.extend.filter.register(
   'after_render:html',
   function (str) {
+    if (/^en(?:-|$)/i.test(String(hexo.config.language))) return str;
     if (typeof str !== 'string') return;
 
     const headEnd = str.indexOf('</head>');

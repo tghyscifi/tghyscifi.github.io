@@ -6,6 +6,11 @@
 (function () {
   'use strict';
 
+  function t(key, fallback, vars) {
+    if (window.siteI18n && window.siteI18n.t) return window.siteI18n.t(key, fallback, vars || {});
+    return fallback.replace(/\{(\w+)\}/g, function (match, name) { return vars && vars[name] != null ? String(vars[name]) : match; });
+  }
+
   // —— 配置 ——
   var API = 'https://api.qijieya.cn/meting/';
   var NETEASE_USER_PROXY = 'https://netease-user.tghyscifi.workers.dev/';
@@ -64,7 +69,7 @@
   function mapAudio(list) {
     return list.map(function (s) {
       return {
-        name: s.name || '未知歌曲',
+        name: s.name || t("music.unknown_song", "未知歌曲"),
         artist: s.artist || '',
         url: s.url,
         cover: s.pic || s.cover || '',
@@ -92,7 +97,7 @@
 
   function renderCard(meta, audioList) {
     var title = meta.name
-      || (meta.type === 'song' ? (audioList[0] && audioList[0].name) : '歌单');
+      || (meta.type === 'song' ? (audioList[0] && audioList[0].name) : t("music.playlist", "歌单"));
     var pid = 'mp-' + (++seq);
 
     var card = document.createElement('div');
@@ -101,8 +106,8 @@
       '<div class="music-card-head">' +
         '<span class="music-card-platform">' + escapeHtml(PLATFORM[meta.server] || meta.server) + '</span>' +
         '<span class="music-card-title">' + escapeHtml(title) + '</span>' +
-        '<span class="music-card-count">' + audioList.length + ' 首</span>' +
-        '<button class="music-card-remove" type="button" aria-label="删除">×</button>' +
+        '<span class="music-card-count">' + escapeHtml(t('music.track_count', '{count} 首', { count: audioList.length })) + '</span>' +
+        '<button class="music-card-remove" type="button" aria-label="' + escapeHtml(t('music.remove', '删除')) + '">×</button>' +
       '</div>' +
       '<div class="music-card-player" id="' + pid + '"></div>';
     cardsEl.appendChild(card);
@@ -143,43 +148,43 @@
 
   async function handleDirect(server, type, id) {
     var key = server + '|' + type + '|' + id;
-    if (seen[key]) { toast('该链接已解析过'); return; }
-    setStatus('正在解析…');
+    if (seen[key]) { toast(t("music.duplicate", "该链接已解析过")); return; }
+    setStatus(t("music.loading", "正在解析…"));
     try {
       var songs = await fetchJSON(
         API + '?server=' + server + '&type=' + type + '&id=' + encodeURIComponent(id) + '&r=' + Math.random(),
         DIRECT_FETCH_MS
       );
-      if (!Array.isArray(songs) || !songs.length) { toast('未解析到歌曲'); return; }
+      if (!Array.isArray(songs) || !songs.length) { toast(t("music.no_songs", "未解析到歌曲")); return; }
       renderCard({ server: server, type: type, id: String(id), key: key }, mapAudio(songs));
       seen[key] = true;
     } catch (e) {
-      toast('解析失败：' + (e && e.message ? e.message : '网络错误'));
+      toast(t("music.load_failed", "解析失败：{error}", { error: e && e.message ? e.message : t('music.network_error', '网络错误') }));
     } finally {
       setStatus('');
     }
   }
 
   async function handleHome(uid) {
-    setStatus('正在获取歌单列表…');
+    setStatus(t("music.fetch_playlists", "正在获取歌单列表…"));
     var data;
     try {
       data = await fetchJSON(NETEASE_USER_PROXY + '?uid=' + encodeURIComponent(uid), HOME_FETCH_MS);
     } catch (e) {
       setStatus('');
-      toast('获取歌单列表失败：' + (e && e.message ? e.message : '网络错误'));
+      toast(t("music.fetch_failed", "获取歌单列表失败：{error}", { error: e && e.message ? e.message : t('music.network_error', '网络错误') }));
       return;
     }
 
     var lists = (data && data.playlists ? data.playlists : []).slice(0, MAX_HOME_PLAYLISTS);
-    if (!lists.length) { setStatus(''); toast('未找到公开歌单'); return; }
+    if (!lists.length) { setStatus(''); toast(t("music.no_playlists", "未找到公开歌单")); return; }
 
     var ok = 0, fail = 0;
     for (var i = 0; i < lists.length; i++) {
       var p = lists[i];
-      setStatus('正在解析歌单 ' + (i + 1) + '/' + lists.length + '：' + (p.name || '…'));
+      setStatus(t("music.playlist_progress", "正在解析歌单 {index}/{total}：{name}", { index: i + 1, total: lists.length, name: p.name || '…' }));
       var key = 'netease|playlist|' + p.id;
-      if (seen[key]) { toast('「' + p.name + '」已存在'); continue; }
+      if (seen[key]) { toast(t("music.playlist_exists", "「{name}」已存在", { name: p.name })); continue; }
       try {
         var songs = await fetchJSON(
           API + '?server=netease&type=playlist&id=' + encodeURIComponent(p.id) + '&r=' + Math.random(),
@@ -194,13 +199,13 @@
       }
     }
     setStatus('');
-    toast('解析完成：成功 ' + ok + ' 张' + (fail ? '，失败 ' + fail + ' 张' : ''));
+    toast(t("music.complete", "解析完成：成功 {ok} 张", { ok: ok }) + (fail ? t("music.complete_failed", "，失败 {fail} 张", { fail: fail }) : ""));
   }
 
   async function onSubmit() {
     var parsed = parseInput(inputEl.value);
-    if (parsed.kind === 'empty') { toast('请先粘贴链接'); return; }
-    if (parsed.kind === 'invalid') { toast('仅支持网易云/QQ音乐歌曲、歌单链接，或网易云个人主页链接'); return; }
+    if (parsed.kind === 'empty') { toast(t("music.paste_first", "请先粘贴链接")); return; }
+    if (parsed.kind === 'invalid') { toast(t("music.supported_links", "仅支持网易云/QQ音乐歌曲、歌单链接，或网易云个人主页链接")); return; }
     submitEl.disabled = true;
     try {
       if (parsed.kind === 'home') { await handleHome(parsed.uid); }

@@ -4,6 +4,11 @@
  * releases/latest.json generated at build time (see scripts/gen-releases.js)
  */
 
+const releasesText = (key, fallback, vars = {}) => {
+  if (window.siteI18n && window.siteI18n.t) return window.siteI18n.t(key, fallback, vars);
+  return fallback.replace(/\{(\w+)\}/g, (match, name) => vars[name] == null ? match : String(vars[name]));
+};
+
 const RELEASES_URL = "https://github.com/tghyscifi/tghyscifi.github.io/releases";
 
 const formatBytes = (bytes) => {
@@ -131,22 +136,22 @@ const initReleases = () => {
   };
 
   const showNoReleases = () => {
-    loading.textContent = "还没有发布过任何版本，去 GitHub 看看吧 →";
+    loading.textContent = releasesText("releases.empty", "还没有发布过任何版本，去 GitHub 看看吧 →");
     const link = document.createElement("a");
     link.className = "releases-btn";
     link.href = RELEASES_URL;
     link.target = "_blank";
     link.rel = "noopener";
-    link.textContent = "前往 GitHub Releases";
+    link.textContent = releasesText("releases.go", "前往 GitHub Releases");
     loading.appendChild(link);
   };
 
   const renderRelease = (release) => {
-    container.querySelector("#releases-badge").textContent = release.prerelease ? "最新预览版" : "最新版本";
+    container.querySelector("#releases-badge").textContent = release.prerelease ? releasesText("releases.preview", "最新预览版") : releasesText("releases.latest", "最新版本");
     container.querySelector("#releases-version").textContent = release.tag_name;
     container.querySelector("#releases-title").textContent = release.name || release.tag_name;
     container.querySelector("#releases-published").textContent =
-      "发布于 " + new Date(release.published_at).toLocaleString("zh-CN");
+      releasesText("releases.published", "发布于 {date}", { date: new Date(release.published_at).toLocaleString(window.siteI18n && window.siteI18n.locale === "en" ? "en" : "zh-CN") });
 
     // 更新说明:基础 markdown 渲染(已转义,防 XSS)
     const body = container.querySelector("#releases-body");
@@ -154,7 +159,7 @@ const initReleases = () => {
       body.innerHTML = renderMarkdown(release.body);
       body.hidden = false;
     } else {
-      body.textContent = "作者没有填写更新说明。";
+      body.textContent = releasesText("releases.no_notes", "作者没有填写更新说明。");
     }
 
     // 下载资源列表
@@ -172,7 +177,7 @@ const initReleases = () => {
         el.querySelector(".releases-asset-name").textContent = asset.name;
         el.querySelector(".releases-asset-meta").textContent =
           formatBytes(asset.size) +
-          (asset.download_count != null ? " · " + asset.download_count + " 次下载" : "");
+          (asset.download_count != null ? " · " + releasesText("releases.downloads", "{count} 次下载", { count: asset.download_count }) : "");
         assetsWrap.appendChild(el);
       });
     } else {

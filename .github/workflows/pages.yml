@@ -35,12 +35,11 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Build Hexo
-        run: |
-          npm install -g hexo-cli   # 关键：全局安装 hexo-cli
-          hexo clean
-          hexo generate             # 直接运行，不需要 npm run build
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

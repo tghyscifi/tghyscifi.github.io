@@ -43,7 +43,8 @@ const initSearch = () => {
         });
 
         // Remove highlight searchparams at target page
-        container.innerHTML = `<div class="search-stats">${resultItems.length + ' results found'}</div><ul class="search-result-list">${resultItems.map(result => result.item.replace(/(<a href="[^\?]+)\?highlight=[^"]+"( class|>)/g, `$1"$2`)).join('')}</ul>`;
+        const stats = window.siteI18n.t('search.results', '{count} results found', { count: resultItems.length });
+        container.innerHTML = `<div class="search-stats">${stats}</div><ul class="search-result-list">${resultItems.map(result => result.item.replace(/(<a href="[^\?]+)\?highlight=[^"]+"( class|>)/g, `$1"$2`)).join('')}</ul>`;
       }
     };
 

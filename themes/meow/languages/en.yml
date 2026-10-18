@@ -7,17 +7,17 @@ tags: Tags
 about: About
 site: Site
 author: Author
-essay: Essay
+essay: Updates
 links: Links
 albums: Albums
 bookmarks: Bookmarks
 friends: Friends
-comments: Comment
+comments: Guestbook
 search: Search
 toggle: Toggle Menu
 
 # Toolbar
-toc: Table Of Content
+toc: Table of Contents
 setting: Settings
 go_to_top: Go To Top
 dark_mode: Dark Mode
@@ -28,7 +28,7 @@ share: Share
 
 # search panel item
 search_fn:
-  tips: Please enter keyword to search...
+  tips: Enter keywords to search…
 
 # Posts
 read_more: Read More
@@ -37,7 +37,7 @@ sticky: Pinned
 pubdate: "Created: %s"
 update: "Updated: %s"
 wordcount: "Word Count: %s"
-readtime: "Reading time: %smins"
+readtime: "Reading time: %s min"
 post_author: "Author: %s"
 prev_post: Previous post
 next_post: Next post
@@ -59,10 +59,13 @@ page_view:
 
 # Social Info
 social:
-  email: EMail
+  email: Email
   github: GitHub
   qq: QQ
-  wechat: Wechat
+  qq-channel: QQ Channel
+  rss: Chinese RSS
+  essay-rss: Updates RSS (Chinese)
+  wechat: WeChat
   ao3: Archive of Our Own
   bilibili: Bilibili
   facebook: Facebook
@@ -72,10 +75,10 @@ social:
   x: X
   mastodon: Mastodon
   steam: Steam
-  xiaohongshu: Red Note
+  xiaohongshu: Xiaohongshu
 
 # Essay
-essay_max_num: "- Display %s recent essays. -"
+essay_max_num: "- Showing the %s latest updates. -"
 
 # Album
 album_img_num: "- TOTAL IMAGES: ... -"
@@ -89,7 +92,7 @@ copyright:
   info: "This work is published by %s at %s"
   link: "Link: "
   text: "This work is licensed under %s. Please indicate %s when reprinting."
-  notify_info: Copied successfully! Please mark the address of this post if redistribute.
+  notify_info: Copied! Please include the URL of this post when sharing.
   F12_info: Turned on developer mode, please follow the copyright license of this website
 
 # Others
@@ -99,4 +102,51 @@ loading: LOADING...
 # Comment Module
 comment:
   latest_comment: Latest Comments
-  no_comment: 😭No comment now...
+  no_comment: 😭No comments yet…
+releases: App
+tools: Tools
+
+ui:
+  interface:
+    content_zh: The content on this page is in Chinese.
+    language: Language
+    switch_en: English
+    switch_zh: 中文
+    feed_zh: Chinese RSS
+
+
+  "releases.error": "Sorry, the latest release is unavailable. Please try again later."
+  "releases.visit": "View GitHub Releases"
+  "releases.latest": "Latest release"
+  "releases.view": "View this release on GitHub"
+  "releases.all": "View all releases"
+  "releases.empty": "No releases yet. Visit GitHub →"
+  "releases.go": "Go to GitHub Releases"
+  "releases.preview": "Latest preview"
+  "releases.no_notes": "No release notes provided."
+  "releases.published": "Published {date}"
+  "releases.downloads": "{count} downloads"
+  "music.input": "Paste a NetEase Cloud Music/QQ Music song or playlist link, or a NetEase profile link"
+  "music.parse": "Load"
+  "music.unknown_song": "Unknown song"
+  "music.playlist": "Playlist"
+  "music.duplicate": "This link has already been loaded"
+  "music.loading": "Loading…"
+  "music.no_songs": "No songs found"
+  "music.network_error": "Network error"
+  "music.fetch_playlists": "Fetching playlists…"
+  "music.no_playlists": "No public playlists found"
+  "music.paste_first": "Please paste a link first"
+  "music.supported_links": "Only NetEase Cloud Music/QQ Music song and playlist links, or NetEase profile links are supported"
+  "music.track_count": "{count} tracks"
+  "music.remove": "Remove"
+  "music.load_failed": "Failed to load: {error}"
+  "music.fetch_failed": "Failed to fetch playlists: {error}"
+  "music.playlist_progress": "Loading playlist {index}/{total}: {name}"
+  "music.playlist_exists": "“{name}” already exists"
+  "music.complete": "Finished: {ok} loaded"
+  "music.complete_failed": ", {fail} failed"
+  "search.results": "{count} results found"
+  "friends.people": "The Blogger's Animal Friends"
+  "friends.references": "References"
+  "friends.tools": "Site Building Tools"

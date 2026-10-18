@@ -35,6 +35,7 @@ header
                       span= __(subtitle)
 
     #nav-function
+      a.language-switch(href=languageSwitchUrl() hreflang=isEnglishUi() ? 'zh-CN' : 'en' lang=isEnglishUi() ? 'zh-CN' : 'en' data-language-switch='' aria-label=uiText('interface.language', '语言'))= isEnglishUi() ? '中文' : 'English'
       if theme.search.enable
         #search-btn
           a(href='javascript:void(0);' title=__('search') accesskey='s')
@@ -47,6 +48,7 @@ header
 
 #menu-aside
   #menu-aside-container
+    a.language-switch(href=languageSwitchUrl() hreflang=isEnglishUi() ? 'zh-CN' : 'en' lang=isEnglishUi() ? 'zh-CN' : 'en' data-language-switch='' aria-label=uiText('interface.language', '语言'))= isEnglishUi() ? '中文' : 'English'
     #menu-aside-info
       a(href=url_for('/') title=__('home'))
         img(src=url_for(theme.info.logo) alt='Logo')

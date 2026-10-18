@@ -53,7 +53,7 @@ aside#home-sidebar
       if theme.sidebar.links.list
         #sidebar-links-content
           each value, name in theme.sidebar.links.list
-            a(href=url_for(value))= name
+            a(href=uiLink(value))= name
 
   if theme.sidebar.categories.enable
     .sidebar-card#sidebar-categories

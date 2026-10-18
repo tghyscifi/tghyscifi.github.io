@@ -1,0 +1,100 @@
+site:
+  title: 溯月馆
+  subtitle: Exploring the boundaries of science fiction
+  description: Exploring the boundaries of science fiction.
+  keywords: science fiction literature technology blog
+titles:
+  '/posts/site-building/': Building a Blog with Hexo and Meow — Methods and Lessons
+  '/posts/hathaway2/': 'An Untimely Flash in the Long Night of History<br>— Leftist Narratives in Hathaway and Their Relevance Today'
+  '/posts/about/': Welcome to 溯月馆
+  '/posts/m1-1-A/': '[Old Draft]《率月纪元》Main Story 1-1-A: The Final Generation'
+  '/posts/m1-1-B/': '[Old Draft]《率月纪元》Main Story 1-1-B: Noise Beyond the Strings'
+  '/posts/p01/': '[Old Draft]《率月纪元》Short Story 01: The Beginning of the Oracle'
+  '/posts/p02/': '[Old Draft]《率月纪元》Short Story 02: Dissecting Life'
+  '/posts/ratomoondp/': 《率月纪元》Series Hub
+  '/posts/s1-0/': '[Old Draft]《率月纪元》Sequel 1-0: Meeting an Old Friend at 黄鹤楼'
+  '/posts/s1-1/': '[Old Draft]《率月纪元》Sequel 1-1: Antarctica — A Recluse, Do Not Disturb'
+  '/posts/test/': Test
+  '/posts/tools/': Useful Tools
+  '/about/': About
+  '/categories/': Categories
+  '/comments/': 💭 Guestbook
+  '/essay/': Updates
+  '/friends/': Friend Links
+  '/music/': Music
+  '/releases/': App Downloads
+  '/tags/': Tags
+categories:
+  技术: Technology
+  评论: Commentary
+  正传: Main Story
+  前传: Prequel
+  后传: Sequel
+  导航: Navigation
+tags:
+  技术: Technology
+  建站: Site Building
+  科幻: Science Fiction
+  影评: Film Reviews
+  键政: Political Commentary
+  率月纪元: 率月纪元
+  连载: Serial
+  正传: Main Story
+  前传: Prequel
+  后传: Sequel
+  短篇: Short Stories
+  导航: Navigation
+  测试: Testing
+theme:
+  global:
+    onblur_title: Come back soon!
+  banner:
+    subtitle:
+      text:
+        - Exploring the boundaries of science fiction
+  sidebar:
+    info:
+      status:
+        desc: Deep in research
+      desc: A science fiction enthusiast writing《率月纪元》, a realist science fiction series grounded in historical materialism.
+      social:
+        list:
+          rss: brand-rss || https://tghyscifi.github.io/atom.xml
+          essay-rss: brand-rss || https://tghyscifi.github.io/essay/atom.xml
+    announcement: |
+      🤪 School is wearing me out.
+      Blog posts appear occasionally;《率月纪元》updates remain a long time coming.
+    links:
+      title: Quick Links
+      list:
+        ℹ️About This Site: /posts/about/
+        ❗Latest Updates: https://tghyscifi.github.io/essay
+        📚《率月纪元》Series Hub: https://tghyscifi.github.io/posts/ratomoondp
+        🎵Music: https://tghyscifi.github.io/music/
+  fiction:
+    attribute:
+      card_title: Work Information
+      addition_title: Notice
+      type: Type
+      fandom: Original Work
+      relationship: Relationships
+      character: Characters
+      rating: Rating
+      warning: Warnings
+      status: Status
+    rating:
+      -1: Not Rated
+      0: General Audiences
+      1: Teen and Up Audiences
+      2: Mature
+      3: Explicit
+    status:
+      Y: Complete
+      N: To Be Continued…
+  comment:
+    waline:
+      lang: en-US
+      option:
+        locale:
+          placeholder: Join the conversation…
+          reactionTitle: Show your support!

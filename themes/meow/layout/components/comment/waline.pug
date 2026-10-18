@@ -14,7 +14,7 @@ script.
         dark: 'body[data-mode="dark"]',
         emoji: !{JSON.stringify(emoji)},
         reaction: !{JSON.stringify(reactionUrls)},
-        path: window.location.pathname.replace(/([^\/#]+)(?:#.+|)$/,'$1/'),
+        path: window.location.pathname.replace(/^\/en(?=\/)/, '').replace(/([^\/#]+)(?:#.+|)$/,'$1/'),
       }, !{JSON.stringify(option)}))
     }
 

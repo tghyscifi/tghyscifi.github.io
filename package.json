@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "node tools/build-bilingual.cjs",
+    "build:zh": "hexo generate",
+    "preview": "node tools/preview.cjs",
+    "check:i18n": "node tools/check-bilingual.cjs",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
@@ -12,6 +15,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
+    "cheerio": "1.2.0",
     "hexo": "^7.0.0",
     "hexo-abbrlink2": "^1.0.2",
     "hexo-blog-encrypt": "^4.0.2",
@@ -28,6 +32,7 @@
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "js-yaml": "4.3.1"
   }
 }

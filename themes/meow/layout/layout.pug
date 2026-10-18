@@ -11,6 +11,8 @@ html(lang= config.language)
     != partial('components/header')
 
     main
+      if isEnglishUi()
+        p.ui-language-note= uiText('interface.content_zh')
       != body
 
       if theme.toolbar.enable

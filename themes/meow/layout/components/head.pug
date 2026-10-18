@@ -1,4 +1,7 @@
 meta(charset='utf-8')
+script.
+  window.SITE_I18N = !{uiScriptData()};
+!= js('js/theme/i18n')
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
 meta(name="msvalidate.01" content="E56A7E70400B65BB448D64BBB721D868")
 meta(name="author" content=config.author || "MEOW Team")
@@ -21,9 +24,9 @@ else
   if is_archive()
     - page_title = __('archives')
   else if is_category() || page.type == "category"
-    - page_title = __('categories') + (page.type != "category" ? (": " + page.category) : "")
+    - page_title = __('categories') + (page.type != "category" ? (": " + uiName(page.category)) : "")
   else if is_tag() || page.type == "tag"
-    - page_title = __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
+    - page_title = __('tags') + (page.type != "tag" ? (": " + uiName(page.tag)) : "")
   else
     - page_title = page.title || config.title
   - page_title = page_title + " | " + (config.title || "MEOW THEME")
@@ -39,6 +42,8 @@ meta(name="apple-mobile-web-app-status-bar-style" content=theme.color.light.them
 if config.url.slice(-1) != "/"
   - canonical += "/"
 link(rel="canonical" href=canonical + page.canonical_path.replace('index.html', ''))
+link(rel="alternate" hreflang="zh-CN" href=uiAlternateUrl('zh-CN'))
+link(rel="alternate" hreflang="en" href=uiAlternateUrl('en'))
 
 != open_graph({title: page_title, description: getPageDescription(), image: page.cover || page.photo || theme.info.logo, author: config.author || "MEOW Team", twitter_card: "summary_large_image"})
 

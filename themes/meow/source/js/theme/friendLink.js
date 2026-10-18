@@ -24,11 +24,13 @@ const initFriendLink = () => {
     });
   };
 
+  const groupKeys = { '博主的动物朋友们': 'friends.people', '文献资料': 'friends.references', '建站工具': 'friends.tools' };
   friendsData.friends.forEach(classModule => {
     const classElement = document.createElement('div');
     classElement.className = "friends-class";
 
-    classElement.innerHTML = `<div class="friends-class-title">${classModule.class.name}<span>(${classModule.list.length})</span></div><div class="friends-class-desc">${classModule.class.desc}</div><div class="friends-class-list"></div>`;
+    const groupTitle = window.siteI18n.t(groupKeys[classModule.class.name], classModule.class.name);
+    classElement.innerHTML = `<div class="friends-class-title">${groupTitle}<span>(${classModule.list.length})</span></div><div class="friends-class-desc">${classModule.class.desc}</div><div class="friends-class-list"></div>`;
     friendsContainer.appendChild(classElement);
 
     listFriendsRandom(classElement, classModule);

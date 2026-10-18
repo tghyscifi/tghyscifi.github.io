@@ -6,7 +6,7 @@
   
   != partial('pages/post/post-meta')
 
-  .post.markdown(indent=page.indent || (theme.post.indent && page.indent==undefined) ? "true" : "false")
+  .post.markdown(lang="zh-CN" indent=page.indent || (theme.post.indent && page.indent==undefined) ? "true" : "false")
     != page.content
   
   if page.status

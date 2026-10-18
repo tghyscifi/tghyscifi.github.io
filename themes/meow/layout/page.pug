@@ -9,15 +9,15 @@
           h1= __('archives')
         else if is_category() || page.type == "category"
           !=getSvg('category')
-          h1= __('categories') + (page.type != "category" ? (": " + page.category) : "")
+          h1= __('categories') + (page.type != "category" ? (": " + uiName(page.category)) : "")
         else if is_tag() || page.type == "tag"
           !=getSvg('tag')
-          h1= __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
+          h1= __('tags') + (page.type != "tag" ? (": " + uiName(page.tag)) : "")
         else
           h1= page.title
 
       if page.type == "essay"
-        a.essay-rss(href=url_for('/essay/atom.xml') title="RSS 订阅动态" target="_blank" rel="noopener")
+        a.essay-rss(href=chineseUrl('/essay/atom.xml') title=uiText('interface.feed_zh', '中文 RSS') target="_blank" rel="noopener")
           != getSvg('brand-rss', { alt: 'RSS' })
       
       if theme.page_view.enable && theme.page_view.page_pv && page.count
