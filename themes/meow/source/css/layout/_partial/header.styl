@@ -277,3 +277,74 @@ header
     font-size: 1.05rem
   .menu-item a
     padding: .2rem .6rem
+
+// The English menu reserves space for the brand and utility controls.
+html[lang='en']
+  #navbar
+    display: grid
+    grid-template-columns: auto minmax(0, 1fr) auto
+  #nav-info
+    grid-column: 1
+  #nav-menu
+    grid-column: 2
+    justify-content: center
+    position: static
+    left: auto
+    transform: none
+    font-size: 1.05rem
+    .menu-item > a, .menu-disclosure-toggle
+      padding: .35rem .6rem
+  #nav-function
+    grid-column: 3
+  .menu-disclosure
+    gap: 0
+    .menu-disclosure-toggle
+      display: flex
+      align-items: center
+      gap: .3rem
+      border: 0
+      border-radius: 10px
+      background: transparent
+      color: var(--font-color-navbar)
+      font: inherit
+      white-space: nowrap
+      cursor: pointer
+      .icon:last-child
+        height: .75rem
+    &:hover > button
+      color: var(--link-hover-font-color)
+    .sub-menu-item
+      top: 100%
+      margin-top: .3rem
+      visibility: hidden
+      pointer-events: none
+      &[hidden]
+        display: none
+    .menu-disclosure-toggle[aria-expanded='true'] + .sub-menu-item
+      visibility: visible
+      pointer-events: auto
+      opacity: 1
+      max-height: 12rem
+  #nav-menu a:focus-visible, .menu-disclosure-toggle:focus-visible
+    outline: 2px solid var(--theme-color)
+    outline-offset: 2px
+  .menu-aside-group-label
+    display: flex
+    align-items: center
+    gap: .3rem
+    margin-bottom: .5rem
+    font-weight: bold
+  .menu-aside-sub-item
+    display: grid
+    grid-template-columns: 1fr
+    li
+      width: 100%
+      a
+        justify-content: flex-start
+      span
+        white-space: normal
+        overflow: visible
+        text-overflow: clip
+  @media (max-width 1100px)
+    #search-btn span
+      display: none

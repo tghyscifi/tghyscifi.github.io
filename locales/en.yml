@@ -46,6 +46,18 @@ tags:
   导航: Navigation
   测试: Testing
 theme:
+  menu:
+    browse || ta-archive:
+      archives: /archives || ta-archive
+      categories: /categories || ta-category
+      tags: /tags || ta-tag
+    essay: /essay || ta-write
+    about: /posts/about/ || ta-about
+    comments: /comments || ta-comment
+    more || ta-menu:
+      friends: /friends || ta-friend
+      APP: /releases || ta-download
+      tools: /posts/tools/ || ta-tool
   global:
     onblur_title: Come back soon!
   banner:

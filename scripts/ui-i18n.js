@@ -24,6 +24,7 @@ hexo.extend.filter.register('before_generate', function () {
   if (!english()) return;
   for (const kind of ['posts', 'pages']) hexo.locals.get(kind).forEach(localizeTitle);
   // Replace keyed link lists instead of merging English labels into Chinese labels.
+  if (catalog.theme?.menu) hexo.theme.config.menu = catalog.theme.menu;
   if (catalog.theme?.sidebar?.links?.list) hexo.theme.config.sidebar.links.list = catalog.theme.sidebar.links.list;
   if (catalog.theme?.banner?.subtitle?.text) hexo.theme.config.banner.subtitle.text = catalog.theme.banner.subtitle.text;
 });

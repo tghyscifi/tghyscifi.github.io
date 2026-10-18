@@ -21,12 +21,20 @@ header
                   != getSvg(trim(value.split('||')[1]))
                 span= __(title)
           else
-            .menu-item
-              a(href='javascript:void(0);')
-                if title.split('||')[1]
-                  != getSvg(trim(title.split('||')[1]))
-                span= __(trim(title.split('||')[0]))
-              ul.sub-menu-item
+            - const groupId = 'nav-submenu-' + trim(title.split('||')[0])
+            .menu-item(class=isEnglishUi() ? 'menu-disclosure' : null)
+              if isEnglishUi()
+                button.menu-disclosure-toggle(type='button' aria-expanded='false' aria-controls=groupId)
+                  if title.split('||')[1]
+                    != getSvg(trim(title.split('||')[1]))
+                  span= __(trim(title.split('||')[0]))
+                  != getSvg('ta-down')
+              else
+                a(href='javascript:void(0);')
+                  if title.split('||')[1]
+                    != getSvg(trim(title.split('||')[1]))
+                  span= __(trim(title.split('||')[0]))
+              ul.sub-menu-item(id=isEnglishUi() ? groupId : null hidden=isEnglishUi() ? true : null)
                 each submenu, subtitle in value
                   li
                     a(href=url_for(trim(submenu.split('||')[0])))
@@ -65,10 +73,16 @@ header
               span= __( title)
         else
           .menu-aside-item
-            a(href='javascript:void(0);')
-              if title.split('||')[1]
-                != getSvg(trim(title.split('||')[1]))
-              span= __(trim(title.split('||')[0]))
+            if isEnglishUi()
+              .menu-aside-group-label
+                if title.split('||')[1]
+                  != getSvg(trim(title.split('||')[1]))
+                span= __(trim(title.split('||')[0]))
+            else
+              a(href='javascript:void(0);')
+                if title.split('||')[1]
+                  != getSvg(trim(title.split('||')[1]))
+                span= __(trim(title.split('||')[0]))
             ul.menu-aside-sub-item
               each submenu, subtitle in value
                 li

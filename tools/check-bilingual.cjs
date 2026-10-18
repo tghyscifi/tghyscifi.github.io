@@ -10,6 +10,23 @@ const catalog = yaml.load(fs.readFileSync(path.join(root, 'locales/en.yml'), 'ut
 const read = route => cheerio.load(fs.readFileSync(path.join(output, route.replace(/^\//, ''), 'index.html'), 'utf8'));
 const theme = yaml.load(fs.readFileSync(path.join(root, '_config.meow.yml'), 'utf8'));
 const enHome = read('/en/');
+const zhHome = read('/');
+const topLabels = $ => $('#nav-menu > .menu-item > a > span, #nav-menu > .menu-item > button > span').map((_, el) => $(el).text()).get();
+assert.deepEqual(topLabels(enHome), ['Browse', 'Updates', 'About', 'Guestbook', 'More'], 'English navigation has five groups');
+const navPaths = ($, selector) => $(selector).map((_, el) => $(el).attr('href').replace(/\/$/, '')).get().sort();
+const originalPaths = Object.values(theme.menu).map(value => value.split('||')[0].trim().replace(/\/$/, '')).sort();
+assert.deepEqual(navPaths(zhHome, '#nav-menu a'), originalPaths, 'Chinese desktop navigation remains flat and complete');
+assert.deepEqual(navPaths(zhHome, '.menu-aside-item a'), originalPaths, 'Chinese mobile navigation remains flat and complete');
+assert.equal(zhHome('#nav-menu > .menu-item').length, originalPaths.length, 'Chinese top-level item count unchanged');
+for (const selector of ['#nav-menu a', '.menu-aside-item a']) {
+  assert.deepEqual(navPaths(enHome, selector), originalPaths.map(route => '/en' + route).sort(), 'English grouped links remain complete: ' + selector);
+}
+for (const id of ['browse', 'more']) {
+  const button = enHome('#nav-menu button[aria-controls="nav-submenu-' + id + '"]');
+  assert.equal(button.attr('type'), 'button', 'Group trigger is a button');
+  assert.equal(button.attr('aria-expanded'), 'false', 'Group starts collapsed');
+  assert(enHome('#nav-submenu-' + id).is('[hidden]'), 'Collapsed links are hidden from keyboard navigation');
+}
 for (const subtitle of theme.banner.subtitle.text) assert(!enHome('script').text().includes(subtitle), 'English banner must not rotate Chinese subtitles');
 let articleCount = 0;
 for (const [route, title] of Object.entries(catalog.titles)) {
