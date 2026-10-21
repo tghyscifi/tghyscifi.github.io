@@ -92,4 +92,3 @@ npm run preview
 - 通用控件词典位于 `themes/meow/languages/en.yml` 和 `zh-CN.yml`，沿用 Hexo 的多语言机制。
 - 博文标题、分类标签显示名和英文主题配置位于 `locales/en.yml`；原始中文内容保持单份维护。
 - 构建后执行 `npm run check:i18n`，验证标题对应、正文保留、语言切换和 RSS 范围。
-- 分阶段计划与回退方法见 [英文界面实施计划](docs/english-ui-plan.md)。
