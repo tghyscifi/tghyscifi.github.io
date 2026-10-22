@@ -3,6 +3,13 @@ essay_info:
     瞳观幻域: assets/images/author.png
 essay_list:
   - content: |
+      查 QQbot 教程顺带刷到几个相当漂亮的二次元主题博客，一番研究后发现用的是[Astro](https://astro.build/)框架的[Shirone](https://astro.build/themes/details/shirone/)模板。
+      仔细一研究发现无论是框架本身还是模板的设计都完胜之前用的[Hexo](https://hexo.io/)+[Meow](https://meow.jumaoo.top/)的组合，遂决定把整个网站迁移过去。
+      这个周末将会很疯狂。
+      这一番折腾下来得到的最重要的经验就是自己用AI爆改不如直接复用别人现成的。
+    date: 2026:10:22 12:55:45
+    from: 瞳观幻域
+  - content: |
       感觉最近有点过于依赖 AI 了，学习能力严重退化。
       也许问题的本质是依赖程度还不够，或者 token 额度不够。（你清一年一千块还是太少了）
       这一问题应该会在未来一年得到缓解。
