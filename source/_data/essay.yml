@@ -4,7 +4,7 @@ essay_info:
 essay_list:
   - content: |
       查 QQbot 教程顺带刷到几个相当漂亮的二次元主题博客，一番研究后发现用的是[Astro](https://astro.build/)框架的[Shirone](https://astro.build/themes/details/shirone/)模板。
-      仔细一研究发现无论是框架本身还是模板的设计都完胜之前用的[Hexo](https://hexo.io/)+[Meow](https://meow.jumaoo.top/)的组合，遂决定把整个网站迁移过去。
+      细看之下无论是框架本身还是模板的设计都完胜之前用的[Hexo](https://hexo.io/)+[Meow](https://meow.jumaoo.top/)的组合，遂决定把整个网站迁移过去。
       这个周末将会很疯狂。
       这一番折腾下来得到的最重要的经验就是自己用AI爆改不如直接复用别人现成的。
     date: 2026:10:22 12:55:45
